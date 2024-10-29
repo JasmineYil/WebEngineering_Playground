@@ -62,6 +62,68 @@ console.log('Make use of markdown codesnippets to show and explain good/bad prac
 ```
 
 
+#### Bad Coding Practices:
+- Removed Unnecessary Debug Logs:  Removed unnecessary debug logs to clean up the code. 
+``` JS 
+// main.js 
+// FROM:
+window.onload = () => {
+  console.log('Initializing...');
+  toggleComments();
+  console.log('Comments toggling initialized');
+
+  console.log('Initializing addComment...');
+  addComment();
+  console.log('Comment form handler initialized');
+
+  console.log('Initializing getBearData...');
+  getBearData();
+  console.log('Bear data fetching initialized');
+};
+
+// TO:
+window.onload = () => {
+  console.log('Initializing Application ...');
+  toggleComments();
+  addComment();
+  getBearData();
+};
+```
+- Replaced .onclick and .onsubmit with addEventListener:
+Replaced .onclick and .onsubmit with addEventListener(), 
+which allows for multiple event listeners, improves modularity, and makes the code easier to maintain.
+
+``` JS
+// modules/showHideComments.js
+// FROM:
+    showHideBtn.onclick = () => { 
+        const showHideText = showHideBtn.textContent;
+        ...
+    };
+
+// TO:
+    showHideBtn.addEventListener('click', () => {
+        const showHideText = showHideBtn.textContent;
+        ...
+    });
+```
+- Uninformative Error Handling: Updated the error messages to include the HTTP status code to provide more context.
+``` JS
+// modules/fetchBearData.js
+// FROM:
+export const getBearData = async () => {
+    const url = `${baseUrl}?${new URLSearchParams(params).toString()}`;
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Network response was not ok');
+
+// TO:
+        if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`); 
+```
+- Inconsistent Code Formatting and Comments: Cleaned up formatting inconsistencies and made sure to only leave neccesary comments.
+
+
+
 ## 2. Dependency- and Build Management Playground (10 Pts.)
 Build the application with ``npm`` and a build and a dependency management tool of your choice (e.g. [Vite](https://vitejs.dev/), [Webpack](https://webpack.js.org/), or others). 
 
