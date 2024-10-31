@@ -176,6 +176,27 @@ Apply the following ruleset for Prettier:
 
 Present your findings here...
 
+1. **Static Typing and Type Safety:**
+
+In JavaScript, variables and function return values are dynamically typed, which means that their type is only known at runtime, which
+can lead to potential runtime errors that are hard to debug, especially as the codebase grows. 
+In TypeScript there is static typing, which allows to define the types of variables, function parameters, and return values, which 
+helps catch errors at compile time than at runtime. Example:
+``` JS
+// addComments.ts
+const nameField = document.querySelector<HTMLInputElement>('#name')!;
+```
+
+2. **Enhanced Code Readability and Maintainability:**
+
+JavaScript does not enforce a structure or data type on variables or functions, which can lead to inconsistent and confusing code.
+TypeScript’s use of interfaces and explicit types makes it clear what each variable or function should contain or return.
+
+3. **Null Safety**
+JavaScript code often involves manipulating the DOM or other objects that may not exist at runtime for which one may encounter runtime errors if one attempts to access properties or methods on a null or undefined object. 
+For example, using document.querySelector might return null if an element is not found, which may lead to potential errors.
+TypeScript introduces null safety by explicitly requiring to handle the possibility of null or undefined values. This prevents runtime errors caused by null or undefined values.
+
 ## 3.	CI/CD Pipeline Playground (5 Pts.)
 Implementation of a CI/CD pipeline to automate the development and deployment process – write automated tests.
 
