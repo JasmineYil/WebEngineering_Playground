@@ -193,6 +193,7 @@ JavaScript does not enforce a structure or data type on variables or functions, 
 TypeScript’s use of interfaces and explicit types makes it clear what each variable or function should contain or return.
 
 3. **Null Safety**
+
 JavaScript code often involves manipulating the DOM or other objects that may not exist at runtime for which one may encounter runtime errors if one attempts to access properties or methods on a null or undefined object. 
 For example, using document.querySelector might return null if an element is not found, which may lead to potential errors.
 TypeScript introduces null safety by explicitly requiring to handle the possibility of null or undefined values. This prevents runtime errors caused by null or undefined values.
