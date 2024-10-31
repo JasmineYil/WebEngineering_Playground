@@ -5,12 +5,12 @@ const params = {
     action: "parse",
     page: title,
     prop: "wikitext",
-    section: 3,
+    section: "3",
     format: "json",
     origin: "*",
 };
 
-export const fetchImageUrl = async (fileName) => {
+const fetchImageUrl = async (fileName: string): Promise<string> => {
     const imageParams = {
         action: "query",
         titles: `File:${fileName}`,
@@ -26,7 +26,7 @@ export const fetchImageUrl = async (fileName) => {
         if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`);
         const data = await res.json();
         const pages = data.query.pages;
-        const imageInfo = Object.values(pages)[0].imageinfo;
+        const imageInfo = Object.values(pages as Record<string, any>)[0].imageinfo;
         if (!imageInfo || !imageInfo.length) throw new Error('Image URL not found');
         return imageInfo[0].url;
     } catch (error) {
@@ -35,7 +35,7 @@ export const fetchImageUrl = async (fileName) => {
     }
 };
 
-export const extractBears = async (wikitext) => {
+const extractBears = async (wikitext: string): Promise<void> => {
     const speciesTables = wikitext.split('{{Species table/end}}');
     const bears = [];
 
@@ -66,7 +66,7 @@ export const extractBears = async (wikitext) => {
         }
     }
 
-    const moreBearsSection = document.querySelector('.more_bears');
+    const moreBearsSection = document.querySelector<HTMLElement>('.more_bears')!;
     bears.forEach((bear) => {
         const imageUrl = bear.image ? bear.image : 'media/placeholder.jpg';
         moreBearsSection.innerHTML += `

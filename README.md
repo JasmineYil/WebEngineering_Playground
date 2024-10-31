@@ -65,7 +65,7 @@ console.log('Make use of markdown codesnippets to show and explain good/bad prac
 #### Bad Coding Practices:
 - Removed Unnecessary Debug Logs:  Removed unnecessary debug logs to clean up the code. 
 ``` JS 
-// main.js 
+// main.ts 
 // FROM:
 window.onload = () => {
   console.log('Initializing...');
@@ -94,7 +94,7 @@ Replaced .onclick and .onsubmit with addEventListener(),
 which allows for multiple event listeners, improves modularity, and makes the code easier to maintain.
 
 ``` JS
-// modules/showHideComments.js
+// modules/showHideComments.ts
 // FROM:
     showHideBtn.onclick = () => { 
         const showHideText = showHideBtn.textContent;
@@ -109,7 +109,7 @@ which allows for multiple event listeners, improves modularity, and makes the co
 ```
 - Uninformative Error Handling: Updated the error messages to include the HTTP status code to provide more context.
 ``` JS
-// modules/fetchBearData.js
+// modules/fetchBearData.ts
 // FROM:
 export const getBearData = async () => {
     const url = `${baseUrl}?${new URLSearchParams(params).toString()}`;

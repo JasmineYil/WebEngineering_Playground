@@ -1,8 +1,8 @@
 export const addComment = () => {
-    const form = document.querySelector('.comment-form');
-    const nameField = document.querySelector('#name');
-    const commentField = document.querySelector('#comment');
-    const list = document.querySelector('.comment-container');
+    const form = document.querySelector<HTMLFormElement>('.comment-form')!;
+    const nameField = document.querySelector<HTMLInputElement>('#name')!;
+    const commentField = document.querySelector<HTMLInputElement>('#comment')!;
+    const list = document.querySelector<HTMLUListElement>('.comment-container')!;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
