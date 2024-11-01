@@ -38,7 +38,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist
-          name: build-artifact
 
   deployment:
     name: Deployment to GitHub Pages
@@ -55,7 +54,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: build-artifact
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
