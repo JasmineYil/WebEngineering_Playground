@@ -1,25 +1,33 @@
-export const addComment = () => {
-  const form = document.querySelector<HTMLFormElement>('.comment-form')!;
-  const nameField = document.querySelector<HTMLInputElement>('#name')!;
-  const commentField = document.querySelector<HTMLInputElement>('#comment')!;
-  const list = document.querySelector<HTMLUListElement>('.comment-container')!;
+export const addComment = (): void => {
+  const form = document.querySelector<HTMLFormElement>('.comment-form');
+  const nameField = document.querySelector<HTMLInputElement>('#name');
+  const commentField = document.querySelector<HTMLInputElement>('#comment');
+  const list = document.querySelector<HTMLUListElement>('.comment-container');
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const listItem = document.createElement('li');
-    const namePara = document.createElement('p');
-    const commentPara = document.createElement('p');
-    const nameValue = nameField.value;
-    const commentValue = commentField.value;
+  if (form && nameField && commentField && list) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    namePara.textContent = nameValue;
-    commentPara.textContent = commentValue;
+      const nameValue = nameField.value.trim();
+      const commentValue = commentField.value.trim();
 
-    list.appendChild(listItem);
-    listItem.appendChild(namePara);
-    listItem.appendChild(commentPara);
+      if (nameValue && commentValue) {
+        const listItem = document.createElement('li');
+        const namePara = document.createElement('p');
+        const commentPara = document.createElement('p');
 
-    nameField.value = '';
-    commentField.value = '';
-  });
+        namePara.textContent = nameValue;
+        commentPara.textContent = commentValue;
+
+        list.appendChild(listItem);
+        listItem.appendChild(namePara);
+        listItem.appendChild(commentPara);
+
+        nameField.value = '';
+        commentField.value = '';
+      }
+    });
+  } else {
+    console.error('One or more required elements were not found in the DOM.');
+  }
 };
