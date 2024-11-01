@@ -11,12 +11,16 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \\\"src/**/*.{ts,tsx,js,jsx,json,css}\\\"",
-    "format:check": "prettier --check \\\"src/**/*.{ts,tsx,js,jsx,json,css}\\\""
+    "format:check": "prettier --check \\\"src/**/*.{ts,tsx,js,jsx,json,css}\\\"",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@types/jsdom": "^21.1.7",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.51.0",
@@ -26,9 +30,11 @@
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
+    "jsdom": "^25.0.1",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js,jsx,json,css}": [
