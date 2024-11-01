@@ -1,9 +1,17 @@
 name: Development Workflow
 
 on:
+  workflow_call:
+    inputs:
+      branch:
+        description: "The branch to run the workflow for"
+        required: false
+        type: string
   push:
     branches:
       - development
+
+
 
 jobs:
   lint-and-test:
