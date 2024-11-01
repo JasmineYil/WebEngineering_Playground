@@ -217,11 +217,15 @@ Here are some additional resources: [GitHub Actions Tutorial](https://github.com
 You might have noticed that the base project has a number of accessibility issues - your task is to explore the existing site and fix them.
 Use the tools presented in our accessibility workshop to test the accessibility in your project.
 
+**Report with wave.webaim.org and Chrome Screen Reader**
+
 **(0.5) Color** 
 
 Test the current color contrast (text/background), report the results of the test, and then fix them by changing the assigned colors.
 
 *Present your reports here.*
+
+- There are 20 contrast errors, which means there is very low contrast between text and background (green background and black text). This makes text hard to read, especially for users with visual impairments. This can be fixed by updating the CSS colors to ensure that all text meets WCAG AA/AAA standards.
 
 **(0.5) Semantic HTML**
 
@@ -229,11 +233,16 @@ Report on what happens when you try to navigate the page using a screen reader. 
 
 *Present your reports here.*
 
+- There are issues with navigating through the page using a screen reader. VoiceOver mentioned elements like "Liste mit 4 Elementen, Home, Intere Linklistenelement, Our Team, Interne Linklistenelement, ..." but this is confusing to understand, especally when the VoiceOver is too fast or in my case in german with an accent.
+To fix this, one should ensure that elements like header, nav, main are being used appropriately for better semantic meaning and adding ARIA Roles like role=navigation. 
+
 **(0.5) Audio** 
 
 The ``<audio>`` player isn't accessible to hearing impaired (deaf) people — can you add some kind of accessible alternative for these users?
 
 *Present your findings and fixes here.*
+
+- The audio player lacks captions or a transcript for users who are deaf or hard of hearing. To fix this, a transcript should be provided directly below the audio player.
 
 **(1) Forms** 
   * The ``<input>`` element in the search form at the top could do with a label, but we don't want to add a visible text label that would potentially spoil the design and isn't really needed by sighted users. Fix this issue by adding a label that is only accessible to screen readers.
@@ -241,11 +250,16 @@ The ``<audio>`` player isn't accessible to hearing impaired (deaf) people — ca
 
 *Present your findings and fixes here.*
 
+- The input element in the search form was missing a label. To fix this add an accessible label using label for="search-query" class="sr-only"Search Query</label and update the CSS to hide it visually (sr-only class).
+- The two Comment Form Labels input elements were not explicitly associated with their labels. 
+
 **(0.5) Comment section**
 
 The show/hide comment control button is not currently keyboard-accessible. Can you make it keyboard accessible, both in terms of focusing it using the tab key, and activating it using the return key?
 
 *Present your findings and fixes here.*
+
+- The "Show/Hide comments" button was not keyboard-accessible. To fix this added an event listener to handle the keydown event to allow the "Enter" key to trigger the action.
 
 **(1) The table**
 
@@ -253,9 +267,19 @@ The data table is not currently very accessible — it is hard for screen reader
 
 *Present your findings and fixes here.*
 
+- The data table lacks descriptive headers and context. To fix this add caption to provide a summary for the table.
+
 **(1) More Findings**
 
 What other accessibility issues did you find? Explain how you did fix them.
+
+- Language missing or invalid: The HTML element was missing a lang attribute. To fix this, add lang="en" to the html tag to specify the language.
+- Very Small Text: Increased the font size for specific elements to ensure they are easily readable.
+
+
+
+-----
+
 
 # Extended Coding Playgrounds
 Please create a new independent Repository for these playgrounds and submit a link to it in the Moodle submission. 
