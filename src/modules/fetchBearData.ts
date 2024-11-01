@@ -24,10 +24,18 @@ const fetchImageUrl = async (fileName: string): Promise<string> => {
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`);
-    const data = await res.json();
+    const data: {
+      query: { pages: Record<string, { imageinfo?: [{ url: string }] }> };
+    } = await res.json();
     const pages = data.query.pages;
-    const imageInfo = Object.values(pages as Record<string, any>)[0].imageinfo;
-    if (!imageInfo || !imageInfo.length) throw new Error('Image URL not found');
+    const imageInfo = Object.values(pages)[0].imageinfo;
+    if (
+      imageInfo === null ||
+      imageInfo === undefined || // @ts-expect-error: Image info can sometimes be null or undefined due to inconsistent API responses.
+      imageInfo.length === 0
+    ) {
+      throw new Error('Image URL not found');
+    }
     return imageInfo[0].url;
   } catch (error) {
     console.error('Error fetching image URL:', error);
@@ -37,7 +45,12 @@ const fetchImageUrl = async (fileName: string): Promise<string> => {
 
 const extractBears = async (wikitext: string): Promise<void> => {
   const speciesTables = wikitext.split('{{Species table/end}}');
-  const bears = [];
+  const bears: Array<{
+    name: string;
+    binomial: string;
+    image: string;
+    range: string;
+  }> = [];
 
   for (const table of speciesTables) {
     try {
@@ -48,7 +61,12 @@ const extractBears = async (wikitext: string): Promise<void> => {
         const imageMatch = row.match(/\|image=(.*?)\n/);
         const rangeMatch = row.match(/\|range=(.*?)(\||\n)/);
 
-        if (nameMatch && binomialMatch && imageMatch && rangeMatch) {
+        if (
+          nameMatch !== null &&
+          binomialMatch !== null &&
+          imageMatch !== null &&
+          rangeMatch !== null
+        ) {
           const fileName = imageMatch[1].trim().replace('File:', '');
           const imageUrl = await fetchImageUrl(fileName);
 
@@ -66,27 +84,29 @@ const extractBears = async (wikitext: string): Promise<void> => {
     }
   }
 
-  const moreBearsSection = document.querySelector<HTMLElement>('.more_bears')!;
-  bears.forEach((bear) => {
-    const imageUrl = bear.image ? bear.image : 'media/placeholder.jpg';
-    moreBearsSection.innerHTML += `
-      <div>
-        <h3>${bear.name} (${bear.binomial})</h3>
-        <img src="${imageUrl}" alt="${bear.name}" style="width:200px; height:auto;">
-        <p><strong>Range:</strong> ${bear.range}</p>
-      </div>
-    `;
-  });
+  const moreBearsSection = document.querySelector<HTMLElement>('.more_bears');
+  if (moreBearsSection !== null && moreBearsSection !== undefined) {
+    bears.forEach((bear) => {
+      const imageUrl = bear.image !== '' ? bear.image : 'media/placeholder.jpg';
+      moreBearsSection.innerHTML += `
+        <div>
+          <h3>${bear.name} (${bear.binomial})</h3>
+          <img src="${imageUrl}" alt="${bear.name}" style="width:200px; height:auto;">
+          <p><strong>Range:</strong> ${bear.range}</p>
+        </div>
+      `;
+    });
+  }
 };
 
-export const getBearData = async () => {
+export const getBearData = async (): Promise<void> => {
   const url = `${baseUrl}?${new URLSearchParams(params).toString()}`;
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`);
-    const data = await res.json();
+    const data: { parse: { wikitext: { '*': string } } } = await res.json();
     const wikitext = data.parse.wikitext['*'];
-    extractBears(wikitext);
+    await extractBears(wikitext);
   } catch (error) {
     console.error('Error fetching bear data:', error);
   }

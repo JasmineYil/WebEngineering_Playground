@@ -6,5 +6,7 @@ window.onload = () => {
   console.log('Initializing Application ...');
   toggleComments();
   addComment();
-  getBearData();
+  getBearData().catch((error) => {
+    console.error('Error in getBearData:', error);
+  });
 };

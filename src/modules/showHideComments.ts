@@ -1,9 +1,9 @@
 export const toggleComments = (): void => {
-  const showHideBtn = document.querySelector<HTMLElement>('.show-hide')!;
+  const showHideBtn = document.querySelector<HTMLElement>('.show-hide');
   const commentWrapper =
-    document.querySelector<HTMLElement>('.comment-wrapper')!;
+    document.querySelector<HTMLElement>('.comment-wrapper');
 
-  if (showHideBtn && commentWrapper) {
+  if (showHideBtn !== null && commentWrapper !== null) {
     commentWrapper.style.display = 'none';
 
     showHideBtn.addEventListener('click', () => {
@@ -16,5 +16,7 @@ export const toggleComments = (): void => {
         commentWrapper.style.display = 'none';
       }
     });
+  } else {
+    console.error('Required elements not found in the DOM');
   }
 };

@@ -4,14 +4,19 @@ export const addComment = (): void => {
   const commentField = document.querySelector<HTMLInputElement>('#comment');
   const list = document.querySelector<HTMLUListElement>('.comment-container');
 
-  if (form && nameField && commentField && list) {
+  if (
+    form !== null &&
+    nameField !== null &&
+    commentField !== null &&
+    list !== null
+  ) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const nameValue = nameField.value.trim();
       const commentValue = commentField.value.trim();
 
-      if (nameValue && commentValue) {
+      if (nameValue !== '' && commentValue !== '') {
         const listItem = document.createElement('li');
         const namePara = document.createElement('p');
         const commentPara = document.createElement('p');
