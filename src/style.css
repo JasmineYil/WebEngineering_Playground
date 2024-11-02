@@ -8,7 +8,7 @@ body {
 
 html {
   font-size: 10px;
-  background-color: #dde;
+  background-color: #f0f0f0; /* Changed to a lighter color for better contrast */
 }
 
 body {
@@ -22,8 +22,34 @@ body {
 font[size='7'],
 font[size='6'],
 font[size='5'] {
-  font-family: 'Sonsie One', cursive;
-  color: #2a2a2a;
+  font-family: 'Open Sans', sans-serif;
+  color: #1a1a1a; /* Changed to a darker color for better contrast */
+}
+
+/* Styling for headline and subtitles */
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 8rem; /* Larger size for the main headline */
+  color: #1a1a1a; /* Changed to improve readability */
+  text-align: center;
+  text-shadow: 2px 2px 10px black;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif; /* Sans-serif for clean readability */
+  font-size: 3rem; /* Larger but smaller than the main headline */
+  color: #e0e0e0; /* Lighter color for better contrast */
+  margin-bottom: 15px;
+  margin-top: 30px; /* Added some margin-top to create space from previous content */
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif; /* Consistent sans-serif style */
+  font-size: 2.5rem; /* Smaller than h2 but still prominent */
+  color: #e0e0e0; /* Light color for consistency */
+  margin-bottom: 10px;
+  margin-top: 20px; /* Add some space from previous content */
 }
 
 p,
@@ -32,23 +58,25 @@ li,
 table,
 label {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #2a2a2a;
+  color: #1a1a1a; /* Changed to a darker color for better contrast */
 }
 
 font[size='7'] {
   font-size: 4rem;
   text-align: center;
-  color: white;
+  color: #ffffff; /* Changed to white for better contrast */
   text-shadow: 2px 2px 10px black;
 }
 
 font[size='6'] {
   font-size: 3rem;
   text-align: center;
+  color: #ffffff; /* Changed to white for better contrast */
 }
 
 font[size='5'] {
   font-size: 2.2rem;
+  color: #ffffff; /* Changed to white for better contrast */
 }
 
 p,
@@ -56,6 +84,10 @@ li,
 table {
   font-size: 1.6rem;
   line-height: 1.5;
+  color: #1a1a1a; /* Changed to improve readability */
+  font-family: 'Open Sans', sans-serif; /* Sans-serif for better readability */
+  margin-bottom: 5px; /* Add space between label and input */
+  font-weight: bold; /* Make text bold for easier identification */
 }
 
 /* || header layout */
@@ -64,7 +96,7 @@ div[class='nav'],
 article,
 footer,
 .secondary {
-  background-color: green;
+  background-color: #004d00; /* Changed to a darker shade of green for better contrast */
 }
 
 article,
@@ -79,7 +111,7 @@ article {
 
 div[class='nav'] {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #4b0082; /* Changed from #ff80ff to a darker shade for better contrast */
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
@@ -103,7 +135,7 @@ div[class='nav'] a {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: #ffffff; /* Changed to white for better contrast */
 }
 
 div[class='nav'] .search {
@@ -141,19 +173,31 @@ article {
   flex: 5;
 }
 
+.author,
+.content {
+  font-family: 'Open Sans', sans-serif; /* Changed to a sans-serif font for better readability */
+  font-size: 2rem; /* Increased font size for better visibility */
+  line-height: 1.8; /* Added more line spacing for better readability */
+  color: #e0e0e0; /* Lighter text color for contrast against dark background */
+}
+
 .secondary {
   flex: 2;
+  background-color: #004d00; /* Changed to darker green for better contrast */
+  color: #ffffff; /* Changed text color to white for better contrast */
 }
 
 footer {
   margin-top: 10px;
+  background-color: #333333; /* Added background color to footer for better contrast */
+  color: #ffffff; /* Changed text color to white for better contrast */
 }
 
 /* Table styling */
 
 table {
   width: 100%;
-  background-color: #dde;
+  background-color: #ffffff; /* Changed from #dde to white for better contrast */
   border-collapse: collapse;
 }
 
@@ -167,11 +211,42 @@ td {
 }
 
 th[scope='col'] {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000000; /* Changed to black for better contrast */
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #def;
+  background-color: #e0e0e0; /* Changed to a lighter shade for better contrast */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+caption {
+  font-size: 1.8rem; /* Larger font size for easy readability */
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px; /* Add some space between caption and table */
+  color: #e0e0e0; /* Color for better contrast with the green background */
+}
+
+th,
+td {
+  border: 1px solid #000000; /* Use a dark border for better contrast */
+  padding: 10px;
+}
+
+th {
+  background-color: #333333; /* Darker background for header cells */
+  color: #ffffff; /* White text color for high contrast */
+  text-align: center; /* Center text for a uniform appearance */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e0e0e0; /* Alternate row colors for improved readability */
 }
 
 /* styling content images and audio */
@@ -189,12 +264,23 @@ audio {
 /* Comments styling */
 
 .comments {
-  background-color: #def;
+  background-color: #e0e0e0; /* Changed from #def to a color with better contrast */
   padding: 10px;
+  border-radius: 10px; /* Rounded corners for better appearance */
+  color: #000000; /* White text color for better contrast */
 }
 
 .show-hide {
   cursor: pointer;
+  font-family: 'Open Sans', sans-serif; /* Changed to a sans-serif font for better readability */
+  text-align: center;
+  width: 150px;
+  background-color: #333333; /* Dark background for contrast */
+  color: #ffffff; /* White text color */
+  line-height: 32px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
 .comments font[size='6'] {
@@ -203,6 +289,7 @@ audio {
 
 .comments font[size='6']:nth-of-type(2) {
   margin-bottom: 0;
+  color: #1a1a1a; /* Changed to improve readability */
 }
 
 .comment-form {
@@ -228,6 +315,7 @@ audio {
 .show-hide {
   text-align: center;
   width: 150px;
+  color: #ffffff; /* Changed text color to white for better contrast */
 }
 
 .comment-form input,
@@ -241,7 +329,16 @@ audio {
 .show-hide {
   background: #333;
   border: 0;
-  color: white;
+  font-size: 2rem; /* Increased font size for better visibility */
+  font-family: 'Open Sans', sans-serif; /* Changed to a sans-serif font for better readability */
+  text-align: center;
+  width: 150px;
+  /* Dark background for contrast */
+  color: #ffffff; /* White text color */
+  line-height: 32px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
 .comment-form input[type='submit'] {
@@ -266,4 +363,135 @@ audio {
 
 .comment-container li p:nth-child(2) {
   flex: 5;
+}
+
+/* Styling for the comment label text */
+.comment-text {
+  font-family: 'Open Sans', sans-serif; /* Sans-serif for better readability */
+  font-size: 1.6rem;
+  margin-bottom: 5px; /* Add space between label and input */
+  font-weight: bold; /* Make text bold for easier identification */
+}
+
+/* Styling for the related section title */
+.related-title {
+  font-family: 'Open Sans', sans-serif; /* Sans-serif for readability */
+  font-size: 2.5rem; /* Increased font size for visibility */
+  color: #ffffff; /* White text for contrast against green background */
+  margin-bottom: 15px;
+  font-weight: bold; /* Emphasize the title */
+}
+
+/* Styling for the related links list */
+.related-links {
+  list-style-type: none; /* Remove bullet points for cleaner look */
+  padding: 0; /* Remove default padding */
+}
+
+.related-links li {
+  margin-bottom: 10px; /* Add some space between items */
+}
+
+/* Link styling */
+.related-links a {
+  font-family: 'Open Sans', sans-serif; /* Sans-serif for consistency */
+  font-size: 1.8rem; /* Increased font size for readability */
+  color: #ffdd57; /* Yellow color for better contrast against the dark background */
+  text-decoration: none; /* Remove underline for a cleaner look */
+  transition:
+    color 0.3s,
+    text-decoration 0.3s; /* Smooth transition for hover and focus effects */
+}
+
+/* Link hover and focus styles */
+.related-links a:hover,
+.related-links a:focus {
+  color: #ffffff; /* Change to white when hovered or focused for improved visibility */
+  text-decoration: underline; /* Underline for better indication of interaction */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Focus indication for keyboard navigation */
+.related-links a:focus {
+  outline: 2px dashed #ffdd57; /* Add a visible outline for keyboard focus */
+}
+
+.transcription {
+  font-size: 1.6rem; /* Increase the font size for readability */
+  color: #e0e0e0; /* Light color for good contrast on a dark background */
+  margin-top: 10px;
+}
+
+.transcription-header {
+  font-family: 'Open Sans', sans-serif; /* Sans-serif for consistency */
+}
+
+details {
+  background-color: #333333; /* Dark background for contrast */
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 15px; /* Space between the audio and the transcription */
+}
+
+details summary {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #ffdd57; /* Yellow color for the summary to make it stand out */
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.search-button {
+  font-size: 1.6rem;
+  padding: 10px 15px; /* Padding to make the button comfortable to click */
+  background-color: #333333; /* Dark background for good contrast */
+  color: #ffffff; /* White text for better readability */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Slight rounding for a cleaner look */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  transition:
+    background-color 0.3s,
+    transform 0.2s; /* Smooth transition for hover */
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: #555555; /* Lighter background on hover/focus */
+  transform: scale(
+    1.05
+  ); /* Slightly scale up the button for better interaction feedback */
+  outline: none; /* Remove default focus outline */
+}
+
+.search-button:focus {
+  outline: 2px dashed #ffdd57; /* Add visible focus outline for keyboard accessibility */
+}
+
+/* Placeholder text styling */
+#search-query::placeholder {
+  font-size: 1.5rem; /* Adjust placeholder text font size */
+  font-family: 'Open Sans', sans-serif; /* Change placeholder font family */
+  color: #888888; /* Change placeholder text color for improved contrast */
+}
+
+#name::placeholder {
+  font-size: 1.6rem; /* Adjust placeholder text font size */
+  font-family: 'Open Sans', sans-serif; /* Change placeholder font family */
+  color: #888888; /* Change placeholder text color for improved contrast */
+}
+
+#comment::placeholder {
+  font-size: 1.6rem; /* Adjust placeholder text font size */
+  font-family: 'Open Sans', sans-serif; /* Change placeholder font family */
+  color: #888888; /* Change placeholder text color for improved contrast */
 }

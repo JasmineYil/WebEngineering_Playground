@@ -92,7 +92,7 @@ const extractBears = async (wikitext: string): Promise<void> => {
         <div>
           <h3>${bear.name} (${bear.binomial})</h3>
           <img src="${imageUrl}" alt="${bear.name}" style="width:200px; height:auto;">
-          <p><strong>Range:</strong> ${bear.range}</p>
+          <p class="content"><strong>Range:</strong> ${bear.range}</p>
         </div>
       `;
     });

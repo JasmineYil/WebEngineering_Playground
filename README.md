@@ -226,6 +226,8 @@ Test the current color contrast (text/background), report the results of the tes
 *Present your reports here.*
 
 - There are 20 contrast errors, which means there is very low contrast between text and background (green background and black text). This makes text hard to read, especially for users with visual impairments. This can be fixed by updating the CSS colors to ensure that all text meets WCAG AA/AAA standards.
+- Also changing "font size" to H1, H2, ... in HTML and CSS ```<font size="6">The trouble with Bears</font>``` (Font size 7 --> H1, Size 6 --> H2. and Size 5 to H3)
+
 
 **(0.5) Semantic HTML**
 
@@ -233,7 +235,7 @@ Report on what happens when you try to navigate the page using a screen reader. 
 
 *Present your reports here.*
 
-- There are issues with navigating through the page using a screen reader. VoiceOver mentioned elements like "Liste mit 4 Elementen, Home, Intere Linklistenelement, Our Team, Interne Linklistenelement, ..." but this is confusing to understand, especally when the VoiceOver is too fast or in my case in german with an accent.
+- There are issues with navigating through the page using a screen reader. VoiceOver mentioned elements like "Liste mit 4 Elementen, Home, Intere Linklistenelement, Our Team, Interne Linklistenelement, ..." but this is confusing to understand, especially when the VoiceOver is too fast or in my case in german with an accent.
 To fix this, one should ensure that elements like header, nav, main are being used appropriately for better semantic meaning and adding ARIA Roles like role=navigation. 
 
 **(0.5) Audio** 
@@ -251,7 +253,11 @@ The ``<audio>`` player isn't accessible to hearing impaired (deaf) people — ca
 *Present your findings and fixes here.*
 
 - The input element in the search form was missing a label. To fix this add an accessible label using label for="search-query" class="sr-only"Search Query</label and update the CSS to hide it visually (sr-only class).
-- The two Comment Form Labels input elements were not explicitly associated with their labels. 
+By updating the search form in the HTML, with an accessible but hidden label and CSS to hide it. Added an Accessible Label element for the input element, with the text "Search our website." This label provides context to screen readers about what the input field is for. The .sr-only class contains several CSS properties designed to hide content visually while ensuring it remains accessible to assistive technologies.
+
+- The two Comment Form Labels input elements were not explicitly associated with their labels.
+  The for and id attributes create a clear association between labels and inputs, making it easier for screen readers to identify and announce labels correctly. This improves form usability for users who rely on assistive technologies.
+  Clicking on the label will now place the cursor in the associated input field, which is also helpful for mouse users.
 
 **(0.5) Comment section**
 
@@ -268,13 +274,22 @@ The data table is not currently very accessible — it is hard for screen reader
 *Present your findings and fixes here.*
 
 - The data table lacks descriptive headers and context. To fix this add caption to provide a summary for the table.
+- Added caption for Context to help screen reader users understand the table's purpose.
+- Replaced Header Cells from td with th to mark them as headers. Screen readers will now recognize these cells as headers, providing important context to users.
+- Added scope Attribute "col" to all column header cells to explicitly indicate that these are column headers. Added scope="row" to the first cell of each data row (<th scope="row">) to mark them as row headers, which improves the table's readability for assistive technologies to help screen readers understand the association between data in a row or column, making it much easier for users to navigate the table.
+
 
 **(1) More Findings**
 
 What other accessibility issues did you find? Explain how you did fix them.
 
 - Language missing or invalid: The HTML element was missing a lang attribute. To fix this, add lang="en" to the html tag to specify the language.
+  Adding lang="en" to the <html> tag indicates that the primary language of the page is English. This helps assistive technologies like screen readers correctly pronounce words.
 - Very Small Text: Increased the font size for specific elements to ensure they are easily readable.
+- Changed Font-Family to sans-serif to improve accessibility for many users, because they are generally considered more readable, particularly for users with certain visual impairments or cognitive difficulties.
+- Search Button is not a button: Changing the input type="submit" to a button makes the search form more customizable and accessible. It allows for styling flexibility, ensuring better visual consistency and interaction feedback.
+  The aria-label or hidden label for the input helps screen readers understand the purpose of the input, while the button with clear text ("Go!") makes it clear what action the user will take.
+- Adjusted Placeholder Text sizes and fonts for better readability. 
 
 
 
