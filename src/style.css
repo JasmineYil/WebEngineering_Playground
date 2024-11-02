@@ -1,14 +1,14 @@
 /* || General setup */
-
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 html {
   font-size: 10px;
-  background-color: #f0f0f0; /* Changed to a lighter color for better contrast */
+  background-color: #f0f0f0;
 }
 
 body {
@@ -18,65 +18,26 @@ body {
 }
 
 /* || typography */
-
-font[size='7'],
-font[size='6'],
-font[size='5'] {
-  font-family: 'Open Sans', sans-serif;
-  color: #1a1a1a; /* Changed to a darker color for better contrast */
-}
-
-/* Styling for headline and subtitles */
 h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 8rem; /* Larger size for the main headline */
-  color: #1a1a1a; /* Changed to improve readability */
+  font-size: 8rem;
+  color: #1a1a1a;
   text-align: center;
   text-shadow: 2px 2px 10px black;
   margin-bottom: 20px;
 }
 
 h2 {
-  font-family: 'Open Sans', sans-serif; /* Sans-serif for clean readability */
-  font-size: 3rem; /* Larger but smaller than the main headline */
-  color: #e0e0e0; /* Lighter color for better contrast */
+  font-size: 3rem;
+  color: #e0e0e0;
   margin-bottom: 15px;
-  margin-top: 30px; /* Added some margin-top to create space from previous content */
+  margin-top: 30px;
 }
 
 h3 {
-  font-family: 'Open Sans', sans-serif; /* Consistent sans-serif style */
-  font-size: 2.5rem; /* Smaller than h2 but still prominent */
-  color: #e0e0e0; /* Light color for consistency */
+  font-size: 2.5rem;
+  color: #e0e0e0;
   margin-bottom: 10px;
-  margin-top: 20px; /* Add some space from previous content */
-}
-
-p,
-input,
-li,
-table,
-label {
-  font-family: 'Open Sans Condensed', sans-serif;
-  color: #1a1a1a; /* Changed to a darker color for better contrast */
-}
-
-font[size='7'] {
-  font-size: 4rem;
-  text-align: center;
-  color: #ffffff; /* Changed to white for better contrast */
-  text-shadow: 2px 2px 10px black;
-}
-
-font[size='6'] {
-  font-size: 3rem;
-  text-align: center;
-  color: #ffffff; /* Changed to white for better contrast */
-}
-
-font[size='5'] {
-  font-size: 2.2rem;
-  color: #ffffff; /* Changed to white for better contrast */
+  margin-top: 20px;
 }
 
 p,
@@ -84,19 +45,17 @@ li,
 table {
   font-size: 1.6rem;
   line-height: 1.5;
-  color: #1a1a1a; /* Changed to improve readability */
-  font-family: 'Open Sans', sans-serif; /* Sans-serif for better readability */
-  margin-bottom: 5px; /* Add space between label and input */
-  font-weight: bold; /* Make text bold for easier identification */
+  color: #1a1a1a;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 5px;
 }
 
 /* || header layout */
-
 div[class='nav'],
 article,
 footer,
 .secondary {
-  background-color: #004d00; /* Changed to a darker shade of green for better contrast */
+  background-color: #004d00;
 }
 
 article,
@@ -111,7 +70,7 @@ article {
 
 div[class='nav'] {
   height: 50px;
-  background-color: #4b0082; /* Changed from #ff80ff to a darker shade for better contrast */
+  background-color: #004d00;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
@@ -135,7 +94,7 @@ div[class='nav'] a {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: #ffffff; /* Changed to white for better contrast */
+  color: #ffffff;
 }
 
 div[class='nav'] .search {
@@ -164,7 +123,6 @@ div[class='nav'] .search {
 }
 
 /* || main layout */
-
 main {
   display: flex;
 }
@@ -175,29 +133,27 @@ article {
 
 .author,
 .content {
-  font-family: 'Open Sans', sans-serif; /* Changed to a sans-serif font for better readability */
-  font-size: 2rem; /* Increased font size for better visibility */
-  line-height: 1.8; /* Added more line spacing for better readability */
-  color: #e0e0e0; /* Lighter text color for contrast against dark background */
+  font-size: 2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
 }
 
 .secondary {
   flex: 2;
-  background-color: #004d00; /* Changed to darker green for better contrast */
-  color: #ffffff; /* Changed text color to white for better contrast */
+  background-color: #004d00;
+  color: #ffffff;
 }
 
 footer {
   margin-top: 10px;
-  background-color: #333333; /* Added background color to footer for better contrast */
-  color: #ffffff; /* Changed text color to white for better contrast */
+  background-color: #333333;
+  color: #ffffff;
 }
 
 /* Table styling */
-
 table {
   width: 100%;
-  background-color: #ffffff; /* Changed from #dde to white for better contrast */
+  background-color: #ffffff;
   border-collapse: collapse;
 }
 
@@ -211,11 +167,11 @@ td {
 }
 
 th[scope='col'] {
-  border-bottom: 1px solid #000000; /* Changed to black for better contrast */
+  border-bottom: 1px solid #000000;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #e0e0e0; /* Changed to a lighter shade for better contrast */
+  background-color: #e0e0e0;
 }
 
 table {
@@ -226,31 +182,26 @@ table {
 }
 
 caption {
-  font-size: 1.8rem; /* Larger font size for easy readability */
+  font-size: 1.8rem;
   font-weight: bold;
   text-align: left;
-  margin-bottom: 10px; /* Add some space between caption and table */
-  color: #e0e0e0; /* Color for better contrast with the green background */
+  margin-bottom: 10px;
+  color: #e0e0e0;
 }
 
 th,
 td {
-  border: 1px solid #000000; /* Use a dark border for better contrast */
+  border: 1px solid #000000;
   padding: 10px;
 }
 
 th {
-  background-color: #333333; /* Darker background for header cells */
-  color: #ffffff; /* White text color for high contrast */
-  text-align: center; /* Center text for a uniform appearance */
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #e0e0e0; /* Alternate row colors for improved readability */
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
 }
 
 /* styling content images and audio */
-
 img,
 audio {
   display: block;
@@ -262,21 +213,17 @@ audio {
 }
 
 /* Comments styling */
-
 .comments {
-  background-color: #e0e0e0; /* Changed from #def to a color with better contrast */
+  background-color: #e0e0e0;
   padding: 10px;
-  border-radius: 10px; /* Rounded corners for better appearance */
-  color: #000000; /* White text color for better contrast */
 }
 
 .show-hide {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif; /* Changed to a sans-serif font for better readability */
   text-align: center;
   width: 150px;
-  background-color: #333333; /* Dark background for contrast */
-  color: #ffffff; /* White text color */
+  background-color: #333333;
+  color: #ffffff;
   line-height: 32px;
   padding: 10px;
   border: none;
@@ -289,7 +236,7 @@ audio {
 
 .comments font[size='6']:nth-of-type(2) {
   margin-bottom: 0;
-  color: #1a1a1a; /* Changed to improve readability */
+  color: #1a1a1a;
 }
 
 .comment-form {
@@ -315,7 +262,7 @@ audio {
 .show-hide {
   text-align: center;
   width: 150px;
-  color: #ffffff; /* Changed text color to white for better contrast */
+  color: #ffffff;
 }
 
 .comment-form input,
@@ -329,12 +276,10 @@ audio {
 .show-hide {
   background: #333;
   border: 0;
-  font-size: 2rem; /* Increased font size for better visibility */
-  font-family: 'Open Sans', sans-serif; /* Changed to a sans-serif font for better readability */
+  font-size: 2rem;
   text-align: center;
   width: 150px;
-  /* Dark background for contrast */
-  color: #ffffff; /* White text color */
+  color: #ffffff;
   line-height: 32px;
   padding: 10px;
   border: none;
@@ -367,76 +312,63 @@ audio {
 
 /* Styling for the comment label text */
 .comment-text {
-  font-family: 'Open Sans', sans-serif; /* Sans-serif for better readability */
   font-size: 1.6rem;
-  margin-bottom: 5px; /* Add space between label and input */
-  font-weight: bold; /* Make text bold for easier identification */
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-/* Styling for the related section title */
 .related-title {
-  font-family: 'Open Sans', sans-serif; /* Sans-serif for readability */
-  font-size: 2.5rem; /* Increased font size for visibility */
-  color: #ffffff; /* White text for contrast against green background */
+  font-size: 2.5rem;
+  color: #ffffff;
   margin-bottom: 15px;
-  font-weight: bold; /* Emphasize the title */
+  font-weight: bold;
 }
 
-/* Styling for the related links list */
 .related-links {
-  list-style-type: none; /* Remove bullet points for cleaner look */
-  padding: 0; /* Remove default padding */
+  list-style-type: none;
+  padding: 0;
 }
 
 .related-links li {
-  margin-bottom: 10px; /* Add some space between items */
+  margin-bottom: 10px;
 }
 
-/* Link styling */
 .related-links a {
-  font-family: 'Open Sans', sans-serif; /* Sans-serif for consistency */
-  font-size: 1.8rem; /* Increased font size for readability */
-  color: #ffdd57; /* Yellow color for better contrast against the dark background */
-  text-decoration: none; /* Remove underline for a cleaner look */
+  font-size: 1.8rem;
+  color: #ffdd57;
+  text-decoration: none;
   transition:
     color 0.3s,
-    text-decoration 0.3s; /* Smooth transition for hover and focus effects */
+    text-decoration 0.3s;
 }
 
-/* Link hover and focus styles */
 .related-links a:hover,
 .related-links a:focus {
-  color: #ffffff; /* Change to white when hovered or focused for improved visibility */
-  text-decoration: underline; /* Underline for better indication of interaction */
-  outline: none; /* Remove default focus outline */
+  color: #ffffff;
+  text-decoration: underline;
+  outline: none;
 }
 
-/* Focus indication for keyboard navigation */
 .related-links a:focus {
-  outline: 2px dashed #ffdd57; /* Add a visible outline for keyboard focus */
+  outline: 2px dashed #ffdd57;
 }
 
 .transcription {
-  font-size: 1.6rem; /* Increase the font size for readability */
-  color: #e0e0e0; /* Light color for good contrast on a dark background */
+  font-size: 1.6rem;
+  color: #e0e0e0;
   margin-top: 10px;
 }
 
-.transcription-header {
-  font-family: 'Open Sans', sans-serif; /* Sans-serif for consistency */
-}
-
 details {
-  background-color: #333333; /* Dark background for contrast */
+  background-color: #333333;
   padding: 10px;
-  border-radius: 5px; /* Rounded corners */
-  margin-top: 15px; /* Space between the audio and the transcription */
+  margin-top: 15px;
 }
 
 details summary {
   font-weight: bold;
   font-size: 1.8rem;
-  color: #ffdd57; /* Yellow color for the summary to make it stand out */
+  color: #ffdd57;
   cursor: pointer;
 }
 
@@ -453,45 +385,34 @@ details summary {
 
 .search-button {
   font-size: 1.6rem;
-  padding: 10px 15px; /* Padding to make the button comfortable to click */
-  background-color: #333333; /* Dark background for good contrast */
-  color: #ffffff; /* White text for better readability */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Slight rounding for a cleaner look */
-  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  padding: 10px 15px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   transition:
     background-color 0.3s,
-    transform 0.2s; /* Smooth transition for hover */
+    transform 0.2s;
 }
 
 .search-button:hover,
 .search-button:focus {
-  background-color: #555555; /* Lighter background on hover/focus */
+  background-color: #555555;
   transform: scale(
     1.05
-  ); /* Slightly scale up the button for better interaction feedback */
-  outline: none; /* Remove default focus outline */
+  );
+  outline: none;
 }
 
 .search-button:focus {
-  outline: 2px dashed #ffdd57; /* Add visible focus outline for keyboard accessibility */
+  outline: 2px dashed #ffdd57;
 }
 
-/* Placeholder text styling */
-#search-query::placeholder {
-  font-size: 1.5rem; /* Adjust placeholder text font size */
-  font-family: 'Open Sans', sans-serif; /* Change placeholder font family */
-  color: #888888; /* Change placeholder text color for improved contrast */
-}
-
+#search-query,
+#comment,
 #name::placeholder {
-  font-size: 1.6rem; /* Adjust placeholder text font size */
-  font-family: 'Open Sans', sans-serif; /* Change placeholder font family */
-  color: #888888; /* Change placeholder text color for improved contrast */
-}
-
-#comment::placeholder {
-  font-size: 1.6rem; /* Adjust placeholder text font size */
-  font-family: 'Open Sans', sans-serif; /* Change placeholder font family */
-  color: #888888; /* Change placeholder text color for improved contrast */
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #888888;
 }
