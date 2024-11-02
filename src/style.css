@@ -399,9 +399,7 @@ details summary {
 .search-button:hover,
 .search-button:focus {
   background-color: #555555;
-  transform: scale(
-    1.05
-  );
+  transform: scale(1.05);
   outline: none;
 }
 
